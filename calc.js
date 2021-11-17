@@ -1,44 +1,67 @@
 function Calculator(arg1, operator, arg2){
-
-    this.sum = function(addend1, addend2){
-        console.log(addend1 +' + ' +addend2 + ' = ', addend1 + addend2)
-    };
-  
-    var innerCalculator;
-  
+  //Operators
       function Division(dividend, divisor) {
-      console.log(dividend + " / " + divisor + " = ", dividend / divisor);
+      console.log(dividend+ ' / ' + divisor + ' = ',dividend / divisor);
     }
     
       function Sum(addend1, addend2) {
-      console.log(addend1 +' + ' +addend2 +' = ', addend1 + addend2);
+      console.log(addend1 + ' + ' +addend2 + ' = ', addend1 + addend2);
     }
   
       function Difference(minuend, subtrahend) {
-  
+      console.log(minuend + ' - ' +subtrahend+ ' = ', minuend - subtrahend);
     }
   
       function Product(multiplicand, multiplier) {
-  
+      console.log(multiplicand + ' * ' +multiplier + ' = ', multiplicand * multiplier);
     }
-  
+
+      function Exponent(base, power) {
+      console.log(base + ' ^ ' +power + ' = ', base ** power);
+    }
+    //Functions
+
+      function Sqrt(radicand) {
+      console.log(' sqrt '+ radicand + ' = ', Math.sqrt(radicand));
+    }
+
+    function Sin(sinOfValue) {
+      console.log(' sin ' + sinOfValue + ' = ', Math.sin(sinOfValue));
+    }
+
+    
     switch(operator){
       case '+':
         Sum(arg1, arg2);
-        //this.sum(arg1, arg2);
         break;
       case '/':
         Division(arg1, arg2);
         break;
+      case '-':
+        Difference(arg1, arg2);
+        break;
+      case '*':
+        Product(arg1, arg2);
+        break;
+      case '**':
+        Exponent(arg1, arg2);
+        break;
+      case 'sqrt':
+        Sqrt(arg1);
+        break;
+      case 'sin':
+        Sin(arg1);
+        break;
       default:
         break;
-  
     }
-  
-      //console.log(arg1, operator, arg2);
-      //console.log(this);
   
   }
   
   Calculator(1, '+', 3);
   Calculator(1, "/", 0);
+  Calculator(2, '-', 1);
+  Calculator(1/2, '*', 2);
+  Calculator(4, '**', 2);
+  Calculator('sqrt', 16);
+  Calculator('sin', 20);
